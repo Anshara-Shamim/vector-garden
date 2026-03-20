@@ -8,7 +8,7 @@ Move your mouse (or drag your finger on mobile) to carry a firefly torch through
 
 ## Live Demo
 
-Deploy to Vercel see deployment section below.
+https://vector-garden.vercel.app
 
 ---
 
