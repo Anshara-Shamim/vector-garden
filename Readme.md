@@ -19,7 +19,7 @@ vector-garden/
 ├── index.html          entry point
 ├── style.css           layout, loading screen, title overlay
 ├── src/
-│   ├── main.js         game loop, light system, glitter, torch
+│   ├── main.js         loop, light system, glitter, torch
 │   ├── ground.js       green ground patches revealed by light
 │   ├── flowers.js      flower data and top-down petal drawing
 │   ├── fireflies.js    wandering firefly movement and blinking
