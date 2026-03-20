@@ -112,38 +112,12 @@ decay: 0.006 + Math.random() * 0.004,      // lower = lasts longer
 
 ## Running Locally
 
-Because the project uses ES modules (`import`/`export`), you need a local server — just opening `index.html` directly in a browser will give a CORS error.
-
+Because the project uses ES modules (`import`/`export`), you need a local server just opening `index.html` directly in a browser will give a CORS error.
 
 **Terminal:**
 ```bash
 npx serve .
 ```
-
----
-
-## Deploying to Vercel
-
-```bash
-# Install Vercel CLI once
-npm install -g vercel
-
-# Add vercel.json to project root
-{
-  "version": 2,
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
-  ]
-}
-
-# Deploy
-vercel
-
-# Future updates
-vercel --prod
-```
-
-After deploying, go to **Vercel Dashboard → your project → Analytics → Enable** and paste the script snippet into the `<head>` of `index.html`.
 
 ---
 
