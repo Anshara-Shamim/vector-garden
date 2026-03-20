@@ -222,7 +222,6 @@ setTimeout(startGarden, 8000)
 
 ## Summary
 
-```
 | Element | Formula |
 |---|---|
 | Brightness | `strength * (1 - distance / radius)` |
@@ -233,4 +232,3 @@ setTimeout(startGarden, 8000)
 | Wing flap | `abs(sin(wingPhase))` |
 | Particle fade | `life^2` |
 | Velocity damping | `velocity *= 0.96` |
-```
