@@ -1,0 +1,88 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* ---- MAIN CANVAS ---- */
+#garden {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  cursor: none;        /* cursor hidden mouse is the golden firefly */
+  opacity: 0;          /* starts invisible, JS fades it in after loading */
+  transition: opacity 2s ease;
+}
+#garden.visible {
+  opacity: 1;
+}
+
+/* ---- LOADING SCREEN ---- */
+/* Full black screen shown while garden initialises */
+#loading {
+  position: fixed;
+  inset: 0;                /* shorthand for top/right/bottom/left all 0 */
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: opacity 1.5s ease;
+}
+#loading.hidden {
+  opacity: 0;
+  pointer-events: none;   /* lets clicks through once invisible */
+}
+#loader-canvas {
+  width: 100vw;
+  height: 100vh;
+  cursor: none;
+}
+
+/* ---- TITLE OVERLAY ---- */
+#title-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  pointer-events: none;    /* never blocks mouse/touch on garden */
+  opacity: 0;              /* starts hidden */
+  transition: opacity 1s ease;
+}
+#title-overlay.visible {
+  opacity: 1;
+}
+#title-overlay.hidden {
+  opacity: 0;
+}
+#title-overlay h1 {
+  font-family: "Cinzel Decorative", serif;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 400; /* try 700 or 900 for bolder */
+  color: rgba(200, 255, 180, 0.85);
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-shadow:
+    0 0 40px rgba(150, 255, 120, 0.4),
+    0 0 12px rgba(200, 255, 160, 0.3);
+}
+/* #title-overlay h1 {
+  font-family: "Eagle Lake", serif;
+  font-size: clamp(1.8rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: rgba(200, 255, 180, 0.85);
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-shadow:
+    0 0 40px rgba(150, 255, 120, 0.4),
+    0 0 12px rgba(200, 255, 160, 0.3);
+} */
