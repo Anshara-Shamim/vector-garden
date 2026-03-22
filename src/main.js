@@ -254,19 +254,51 @@ function runLoadingScreen() {
     // Start game loop
     loop();
 
+    // // Show title after loading fades
+    // setTimeout(() => {
+    //   titleEl.classList.add('visible');
+
+    //   // Fade title out after 3 seconds
+    //   setTimeout(() => {
+    //     titleEl.classList.add('hidden');
+    //     titleEl.classList.remove('visible');
+
+    //     // Remove loading div from DOM completely
+    //     setTimeout(() => loadingEl.remove(), 2000);
+    //   }, 3000);
+    // }, 800);
+
     // Show title after loading fades
     setTimeout(() => {
-      titleEl.classList.add('visible');
+    titleEl.classList.add('visible');
 
-      // Fade title out after 3 seconds
+    // Fade title out after 3 seconds
+    setTimeout(() => {
+    titleEl.classList.add('hidden');
+    titleEl.classList.remove('visible');
+
+    // Show instructions after title disappears
+    setTimeout(() => {
+      const isMobile = window.innerWidth < 600;
+      titleEl.querySelector('h1').textContent = isMobile
+        ? 'drag your finger through the dark'
+        : 'move your cursor through the dark';
+        titleEl.querySelector('h1').style.fontFamily = '"Pinyon Script", serif';
+        titleEl.querySelector('h1').style.fontSize   = 'clamp(1.5rem, 4vw, 3rem)';
+        titleEl.classList.remove('hidden');
+        titleEl.classList.add('visible');
+
+      // Fade instructions out after 4 seconds
       setTimeout(() => {
         titleEl.classList.add('hidden');
         titleEl.classList.remove('visible');
-
-        // Remove loading div from DOM completely
         setTimeout(() => loadingEl.remove(), 2000);
-      }, 3000);
-    }, 800);
+      }, 4000);
+    }, 1200);
+
+  }, 3000);
+}, 800);
+
   }
 
   // --- Listen for any interaction ---
@@ -315,7 +347,7 @@ function runLoadingScreen() {
       // Eagle Lake
       // loaderCtx.font = '14px "Eagle Lake", serif';
       // Pinyon Script
-      loaderCtx.font = '16px "Pinyon Script", serif';
+      loaderCtx.font = '22px "Pinyon Script", serif';
       loaderCtx.textAlign   = 'center';
       loaderCtx.fillText(hint, cx, cy + 55);
       loaderCtx.restore();
