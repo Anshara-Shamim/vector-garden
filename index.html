@@ -8,22 +8,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Eagle+Lake&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+<meta name="description" content="Vector Garden is an interactive dark canvas simulation built with HTML5 Canvas and vanilla JavaScript. Features firefly mechanics, butterfly animations, and generative art using simple math and ES6 modules." />
+<meta name="keywords" content="Vector Garden, HTML5 Canvas, JavaScript, interactive simulation, firefly mechanics, generative art, creative coding, canvas animation, butterfly animation" />
+<meta property="og:title" content="Vector Garden" />
+<meta property="og:description" content="An interactive dark garden with firefly and butterfly mechanics built with HTML5 Canvas and vanilla JavaScript." />
+<meta property="og:url" content="https://vector-garden.vercel.app" />
+<link rel="canonical" href="https://vector-garden.vercel.app/" />
 </head>
 <body>
-
   <!-- LOADING SCREEN single firefly blinks until user interacts -->
   <div id="loading">
     <canvas id="loader-canvas"></canvas>
   </div>
-
   <!-- TITLE fades in after user enters, then fades out -->
   <div id="title-overlay">
     <h1>Vector Garden</h1>
   </div>
-
   <!-- MAIN CANVAS -->
   <canvas id="garden"></canvas>
-
   <script type="module" src="src/main.js"></script>
 </body>
 </html>
